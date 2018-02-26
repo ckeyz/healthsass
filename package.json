@@ -1,15 +1,24 @@
 {
   "name": "healthsass",
   "version": "1.0.0",
-  "description": "A website upgrade theme for a physio company",
+  "description": "A sass based wordpress theme for medical fields",
   "main": "index.php",
-  "author": "Clive Tshuma",
-  "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "grunt": "^1.0.2",
     "grunt-autoprefixer": "^3.0.4",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sass": "^2.1.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeyz/healthsass.git"
+  },
+  "author": "Clive Tshuma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ckeyz/healthsass/issues"
+  },
+  "homepage": "https://github.com/ckeyz/healthsass#readme"
 }
