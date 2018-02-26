@@ -117,6 +117,9 @@ add_action( 'widgets_init', 'healthsass_widgets_init' );
  * Enqueue scripts and styles.
  */
 function healthsass_scripts() {
+	// Enqueue Google Fonts: Cormorant Garamond and 
+	wp_enqueue_style('healthsass-fonts', 'https://fonts.googleapis.com/css?family=Arsenal:400,700|Cormorant+Garamond:400,400i,600,700');
+
 	wp_enqueue_style( 'healthsass-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'healthsass-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
