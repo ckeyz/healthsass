@@ -84,6 +84,44 @@ endif;
 add_action( 'after_setup_theme', 'healthsass_setup' );
 
 /**
+ * Register custom fonts.
+ */
+function healthsass_fonts_url() {
+	$fonts_url = '';
+
+	/*
+	 * Translators: If there are characters in your language that are not
+	 * supported by Cormorant Garamond and Arsenal, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$cormorant_garamond= _x( 'on', 'Cormorant Garamond font: on or off', 'healthsass' );
+
+	$arsenal= _x( 'on', 'Arsenal font: on or off', 'healthsass' );
+
+	$font_families = array();
+
+	if ( 'off' !== $cormorant_garamond ) {
+		$font_families[] = 'Cormorant Garamond:400,400i,600,700';
+	}
+
+	if ( 'off' !== $arsenal ) {
+		$font_families[] = 'Arsenal:400,700';
+	}
+	
+	if( in_array('on', array($cormorant_garamond, $arsenal)) ) {
+	 
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url_raw( $fonts_url );
+}
+
+/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
@@ -118,7 +156,7 @@ add_action( 'widgets_init', 'healthsass_widgets_init' );
  */
 function healthsass_scripts() {
 	// Enqueue Google Fonts: Cormorant Garamond and 
-	wp_enqueue_style('healthsass-fonts', 'https://fonts.googleapis.com/css?family=Arsenal:400,700|Cormorant+Garamond:400,400i,600,700');
+	wp_enqueue_style('healthsass-fonts', healthsass_fonts_url() );
 
 	wp_enqueue_style( 'healthsass-style', get_stylesheet_uri() );
 
