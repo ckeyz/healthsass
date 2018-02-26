@@ -267,13 +267,14 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: "Arsenal", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
   clear: both;
 }
 
@@ -342,7 +343,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background: #9b7474;
   /* Fallback for when there is no custom background color defined. */
 }
 
