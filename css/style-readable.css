@@ -746,6 +746,12 @@ a:hover, a:active {
   margin: 0 auto;
 }
 
+@media screen and (min-width: 600px) {
+  .site-content {
+    padding: 2em;
+  }
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
